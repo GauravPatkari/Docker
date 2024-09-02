@@ -1,0 +1,57 @@
+	• Virtualization
+	- We can share or launch different servers  using hypervisor in that host where every Server has its own O.S
+	- Hypervisor -  It will used to create a Server on Host in Data centre Racks
+	- Host -> Hypervisor -> Servers -> OS in that Server
+
+
+	• Containerization
+	- We can launch the multiple containers on a Single OS 
+	- Host -> Server -> Containers -> App layers
+	- Use containerization because of Micro Services architectures
+	- But for multiple layers of application the Servers and O.S also increases in this architecture.
+	- Therefor to overcome this situation, Multiple Containers can be launched and Setup in a Single Server with same micro services architecture. 
+	- Which also has advantages of cost optimization 
+	- Due this multi container support in single server, if there is an issue in a single container it will not affect the entire architecture of the app.
+
+
+	• Communication between Developer & DevOps Teams
+	- The version used in developers phase can be mismatch at time of launching the application Live. 
+	- Therefor to resolve this issue Versions of Web servers/App Version/Programming Script Versions are already discussed between them. 
+	- Then DevOps engineer will create an environment setup for the developers related to that version.
+	- And finally create an IMAGE for that entire Source Code and use that image to live the application.
+
+
+	• Auto-Scaling 
+	- To reduce the downtime because of delayed of Servers Launching which is also called Booting. 
+	
+	
+	• Bare Metal 
+	- There is only one OS in the Rack of Server
+	- Therefore Hypervisor is not used in that case 
+	- There is No Sharing of O.S or Host therefore it is very Secure
+	
+	
+	
+	• Container Launching & Setup in EC2 (Server) i.e. [ Docker Network ]
+	- Launch Server (EC2) -> Install Docker -> Launch Containers -> 
+	- At the time of docker installation it will create its own Network same as AWS. 
+	- Where it will create a Sub-Network in that i.e like Subnet 
+	- To launch the containers using different Subnet we have to create a another Sub-Network.
+	- With each container it will assign with different IP.
+	- At the time of launching containers in the server it will always assign with Private Ip which it can get from Subnet and indirectly from VPC CIDR 
+	- Ex. 3-Tier Architecture (LEMP)
+	- Cont-1 { nginx / php }
+	- Cont-2 { mysql }
+	- To see and run the page of nginx of Cont-1 the flow is give below 
+	- EC2 (server) using pub IP from 80 -> Map the Port no. of EC2 to Cont port.no. through EC2 URL. 
+
+
+
+	• Process of Image & Containers 
+	- Docker uses Debian to create an Image that we are requested from the User of Docker. 
+	- As we know that Container shares the OS of Server (EC2). 
+	- But Container also hold the Small Part of OS for the process. 
+	- Where this container OS only use for Isolation or Separation. 
+	
+
+
